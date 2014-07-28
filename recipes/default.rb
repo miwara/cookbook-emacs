@@ -29,18 +29,10 @@ execute "emacs" do
   creates "#{node['emacs']['prefix']}/bin/emacs"
 end
 
-git "/home/louise/cask" do
-  repository "https://github.com/cask/cask.git"
-  reference "master"
-
-  user "louise"
+# .emacs.d
+directory "/home/louise/.emacs.d/" do
+  owner "louise"
   group "louise"
-end
-
-execute "cask" do
-  cwd "/home/louise"
-  command <<-EOH
-  mv cask .cask;
-  export PATH="/home/louise/.cask/bin:$PATH";
-  EOH
+  mode "0755"
+  action :create
 end
