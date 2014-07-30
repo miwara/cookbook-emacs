@@ -30,9 +30,9 @@ execute "emacs" do
 end
 
 # .emacs.d
-directory "/home/louise/.emacs.d/" do
-  owner "louise"
-  group "louise"
+directory "/home/#{node['user']}/.emacs.d/" do
+  owner "#{node['user']}"
+  group "#{node['user']}"
   mode "0755"
   action :create
 end
