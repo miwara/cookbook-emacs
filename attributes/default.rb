@@ -2,6 +2,8 @@
 # Cookbook Name:: emacs
 # Recipe:: default
 #
+default["user"] = "vagrant"
+
 default["emacs"]["name"] = "emacs-24.3"
 default["emacs"]["prefix"] = "/usr/local"
 
