@@ -11,7 +11,7 @@ package "ncurses-devel" do
 end
 
 remote_file "/tmp/#{node['emacs']['name']}.tar.gz" do
-  source "#{node['emacs']['tar']['uri']}"
+  source node['emacs']['tar']['uri']
   mode 0644
 end
 
@@ -31,8 +31,8 @@ end
 
 # .emacs.d
 directory "/home/#{node['user']}/.emacs.d/" do
-  owner "#{node['user']}"
-  group "#{node['user']}"
+  owner node['user']
+  group node['user']
   mode "0755"
   action :create
 end
