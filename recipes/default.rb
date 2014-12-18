@@ -6,9 +6,9 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-package "ncurses-devel" do
-  action :install
-end
+#package "ncurses-devel" do
+#  action :install
+#end
 
 remote_file "/tmp/#{node['emacs']['name']}.tar.gz" do
   source node['emacs']['tar']['uri']
